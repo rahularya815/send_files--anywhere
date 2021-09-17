@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% block head %}
+<title>Homepage</title>
+<style>
+  .container{
+    height:560px;
+    width:100%;
+    border:1px solid #8fffc754;
+    background-color:#8fffc754;
+    position: relative;
+  
+  }
+  .container_0{
+    height:400px;
+    width:80%;
+    /*border:1px solid black;*/
+    margin:20px 200px;
+  }
+.container_1{
+  height:300px;
+  width:40%;
+  /*border:1px solid black;*/
+  box-shadow: 0 2px 5px -2px rgba(0,0,0,.9);
+  border-radius:5px;
+  margin-left:55%;
+  margin-top:30px;
+  padding:20px 20px;
+}
+.logincss{
+  font-weight: 200;
+  color:#00c0ac;
+  margin-bottom: 20px;
+}
+
+.form-group{
+  border: 1px solid rgb(236, 231, 231);
+  box-shadow: 0 2px 5px -2px rgba(0,0,0,.9);
+  border-radius:10px;
+    margin-bottom:10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.form-group i{
+  /*border:1px solid black;*/
+  padding:10px;
+  color:burlywood;
+}
+.form-group input{
+    width:50%;
+    border:2px solid #f0f0f0;
+    border-radius: 5px;
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    padding:10px;
+    margin-top:5px;
+    
+
+}
+
+.btn{
+  margin-left:80%;
+  box-shadow: 0 2px 5px -2px rgba(0,0,0,.9);
+    position: relative;
+    padding:10px 5px;
+    background-color: white;
+    display: inline-block;
+    text-decoration:none;
+    color:rgb(81, 216, 164);
+    cursor:pointer;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform:uppercase;
+    border:none;
+    border-radius: 10px;
+   
+}
+.btn:hover{
+  
+  background: rgb(81, 216, 164);
+  color:white;
+ 
+
+}
+
+
+
+
+
+
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+	 <div class="container">
+    
+     <div class="container_0">
+      
+<div class="container_1">
+  <form action="" method="POST">
+    <h1 class="logincss">Login :</h1>
+    <div class="form-group">
+           <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+        <input type="name" name="username" class="form-control" placeholder="Username" required>
+      </div>
+      <div class="form-group">
+        <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+      </div>
+      <button class="btn" type="submit">Log In</button>
+  </form>
+</div>	 
+</div>
+</div>
+ 
+
+<!--<script type="text/javascript">
+alert("WELCOME,This is a sample only. ");
+
+</script> -->
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% block head %}
+<title>Registration</title>
+<style>
+  .container2{
+    height:580px;
+    width:100%;
+    /*border:1px solid black;*/
+    background-color:#8fffc754;
+  }
+.container_2_1{
+  height:500px;
+  width:50%;
+  border:1px solid black;
+  box-shadow: 0 2px 5px -2px rgba(0,0,0,.9);
+  position: relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 0 2px 5px -2px rgba(0,0,0,.9);
+  border-radius: 20px;
+}
+.reg{
+  height:50px;
+  width:30%;
+  /*border:1px solid black;*/
+   margin-bottom:20px;
+   margin-left: 20px;
+   margin-top:20px;
+   color:#00c0ac;
+
+}
+.reg h1{
+  font-weight: 200;
+}
+.form-group-2{
+  height:50px;
+  width:90%;
+ /* border:1px solid black;*/
+  padding:10px 10px;
+  margin-bottom:10px;
+  margin-left: 20px;
+  box-shadow: 0 2px 5px -2px rgba(0,0,0,.9);
+  border-radius: 10px;
+}
+.form-group-2 input{
+  height:30px;
+  width:50%;
+  padding:10p 10px;
+   border:none;
+   border-radius: 5px;
+ 
+}
+.form-group-2 input:focus{
+  outline: none;
+  padding:10px;
+}
+.btn_1{
+  height:30px;
+  margin-left: 80%;
+  width:100px;
+  border:none;
+  margin-top:15px;
+  background-color: white;
+  font-weight: 500;
+    letter-spacing: 2px;
+    text-transform:uppercase;
+    border:none;
+    border-radius: 10px;
+}
+.btn_1:hover{
+  background: rgb(81, 216, 164);
+  color:white;
+  outline: none;
+}
+</style>
+{% endblock %}
+{% block body %}
+
+
+
+<div class="container2">
+  <div class="container_2_1">
+  <div class="reg">
+<h1 class="reg1">Register :</h1>
+</div>
+<form action="" method="POST" class="form_1">
+
+<div class="form-group-2">
+  Name:
+    <input type="text" name="name" class="form_control" placeholder="Name" required>
+
+</div>
+<div class="form-group-2">
+  Username:
+<input type="text" name="username" class="form_control" placeholder="Username" required><br>
+</div>
+
+
+<div class="form-group-2">
+  Phone Number :
+<input type="number" name="phone" class="form_control" placeholder="Phone No" maxlength="10" required><br>
+</div>
+<div class="form-group-2">
+  E-mail:
+<input type="email" name="email" class="form_control"  id="textcolor" placeholder="E-mail" required><br>
+</div>
+
+<div class="form-group-2">
+  Password :
+<input type="password" name="password" class="form_control" placeholder="Password" required><br>
+</div>
+<div class="form-group-2">
+  Confirm-Password :
+<input type="password" name="confirm password" class="form_control" placeholder="Confirm password" required>
+</div>
+  <button class="btn_1" type="submit">Submit</button>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

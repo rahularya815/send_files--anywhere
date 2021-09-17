@@ -1,0 +1,208 @@
+{% extends "layout.html" %}
+{% block head %}
+  <title>Dashboard</title>
+
+   <link href="https://vjs.zencdn.net/7.8.3/video-js.css" rel="stylesheet" />
+
+<style>
+  .container_3{
+  height:auto;
+    width:100%;
+    border: 1px solid #8fffc754;
+    background-color:#8fffc754;
+  }
+  .username_1{
+    height:50px;
+    width:80%;
+    margin:10px 10px;
+    padding:10x;
+    border:1px solid #8fffc754;
+
+  }
+  .username_1 h4{
+    margin:5px;
+	float:right;
+	margin-right:-20%;
+	text-transform:uppercase;
+	
+   
+  }
+.container4{
+  height:auto;
+  width:100%;
+/* border: 1px solid black;*/
+  margin-top:-5%;
+
+}
+ .container4 .row1{
+   height:50px;
+   width:70%;
+   border:1px solid #8fffc754;
+
+   margin-left: 30px;
+   box-shadow: 0 2px 5px -2px rgba(0,0,0,.7);
+   border-radius:10px;
+ 
+ }
+ .container4 .row1 .col2{
+   height:40px;
+   width:99%;
+   border: 1px solid #8fffc754;
+   box-shadow: 0 2px 5px -2px rgba(0,0,0,.7);
+  margin-left:5px;
+  margin-top: 5px;
+  margin-right:5px;
+  border-radius:10px;
+ }
+ .container4 .row1 .col2 form{
+   height:30px;
+   width:100%;
+   border:1px solid #8fffc754;
+   display: flex;
+   justify-content: flex-start;
+   margin-top: 5px;
+
+ }
+ .custom-file{
+   height: 25px;
+   width:50%;
+   border:1px solid #8fffc754;
+   display: flex;
+   justify-content: flex-start;
+  margin-left: 10px;
+
+ }
+ .btn3_1{
+  margin-left:80%;
+  box-shadow: 0 2px 5px -2px rgba(0,0,0,.9);
+    position: relative;
+    padding:5px 5px;
+    background-color: white;
+    display: inline-block;
+    text-decoration:none;
+    color:rgb(81, 216, 164);
+    cursor:pointer;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform:uppercase;
+    border:none;
+    border-radius: 10px;
+   
+ }
+ .btn3_1:hover{
+  
+  background: rgb(81, 216, 164);
+  color:white;
+ 
+
+}
+
+.container5{
+  height:auto;
+  width:100%;
+  background-color: #8fffc754;
+  margin-top: -12px;
+  border:1px solid #8fffc754;
+
+}
+.container5_1{
+  height:auto;
+  width:70%;
+  border:1px solid #8fffc754;
+ margin-left: 28px;
+ display: flex;
+ justify-content: flex-start;
+ box-shadow: 0 2px 5px -2px rgba(0,0,0,.8);
+ border-radius:5px;
+ 
+ 
+ 
+}
+.container5_1:first-child{
+  margin-top:7px;
+}
+
+
+
+.delete {
+text-decoration: burlywood;
+ padding: 7px;  
+color:#024b30;
+    cursor:pointer;
+    font-weight: 300;
+    
+  
+    
+}
+</style>
+
+ <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+ <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+
+
+
+{% endblock %}
+
+{% block body %}
+<div class="container_3">
+  <div class="username_1">
+ <h4>{{name}}</h4>
+</div>
+
+
+   <div class="container4">
+    <div class="row1">
+      <div class="col2">
+
+        
+
+
+        <form action="" method="POST" enctype="multipart/form-data">
+         
+		   <input type="hidden" id="teachername" name="teachername" value="{{name}}">
+		    <input type='hidden' name='uuid' id='uuid' value="{{uid}}" readonly>
+          
+
+             <div class="custom-file">
+               <label class="custom-file-label" form="video"><h5>Select File :</h5></label>&nbsp;&nbsp;&nbsp;
+              <input type="file" class="custom-file-input" name="video" id="video">
+            </div>
+          
+               <div class="btn3">
+         <button type="submit" class="btn3_1">Upload</button>
+           </div>
+       </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="container5">
+
+  {% for line in vid %}
+
+
+      {% if line[0]==uid %}
+
+        
+
+      <div class="container5_1">     
+			
+			<a  class="delete" href="{{ url_for('static', filename=line[1]) }}" download>{{line[1]}}</a>
+	
+
+          
+          &emsp;&emsp;&emsp;&emsp;<a  class="delete" href='/vid/delete/{{(line[1])}}'>Delete</a>
+        </div>
+        <br>
+      {% endif %}
+	
+  {% endfor%}
+
+</div>
+
+<script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
+
+{% endblock %}
